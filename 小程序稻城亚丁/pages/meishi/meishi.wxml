@@ -1,0 +1,56 @@
+<!--pages/meishi/meishi.wxml-->
+<!-- 搜索框 -->
+<view>
+  <l-search-bar placeholder="搜索" bg-color="#f6f6f6"
+                shape="circle"/>
+</view>
+<!-- 文章展示栏 -->
+<view class="articles">
+  <l-card wx:for="{{zhList}}" wx:if="{{index>0 && index<8}}" wx:key="id"  type="primary"
+          l-title-class="l-title"
+           l-img-class="right-card" 
+           image="{{item.img}}"
+    title="{{item.title}}">
+    <view class="content-container">
+      <text class="content {{ellipsis?'ellipsis':'unellipsis'}}">{{item.content}}</text>
+      <view bindtap='ellipsis'>
+        <view>
+          <a class="fold">{{ellipsis?'展开':'收起'}}</a>
+        </view>
+      </view>
+    </view>
+  </l-card>
+</view>
+<!-- 热门评论区 -->
+<view class="comments">
+  <text>热门评论</text>
+  <l-card wx:for="{{zhList}}" wx:if="{{index>=0 && index<3}}" wx:key="id" type="avatar" l-class="card" image="{{item.img}}"
+    title="{{item.user}}" describe="{{item.date}}">
+        <!-- 此处为content -->
+        <view class="avter-content">
+          {{item.comment}}
+        </view>
+        <view class="avter-share-container">
+          <view class="like-container">
+              <l-icon name="like" color="#666" size="28" />
+              <view class="number">{{item.like}}喜欢</view>
+          </view>
+          <view class="like-container">
+              <l-icon name="comment" color="#666" size="28" />
+              <view class="number">{{item.comNumber}}评论</view>
+          </view>
+        </view>
+        <l-tag  shape="circle" 
+                bg-color="#f3f3f3" 
+                font-color="#3963BC" 
+                slot="more"
+                size="large">
+                + 关注
+        </l-tag>
+  </l-card>
+</view>
+<!-- 底部发表评论栏 -->
+<view class="bottom">
+  <input type="text"/>
+  <l-button type="default" shape="circle" >发表评论</l-button>
+</view>

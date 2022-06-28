@@ -1,0 +1,83 @@
+<!--pages/zhihuiyading/zhihuiyading.wxml-->
+<!-- 顶部搜索输入框 -->
+<view class="search">
+<!-- 获取当前城市位置信息 -->
+  <view class="map-container">
+  <view class="header">
+    <l-icon name="address" size="30"/>
+  	<!--这里的city就是我们要获取的城市-->
+    <view class="localtion">{{city}}</view>
+  </view>
+</view>
+  <l-search-bar placeholder="搜索" bg-color="#f6f6f6"
+                shape="circle"/>
+</view>
+<!-- 轮播图 -->
+<view class="swiper">
+  <swiper autoplay indicator-dots>
+    <swiper-item>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 缤纷稻城 -->
+<view class="bfdc-container">
+  <view class="bfdc">
+    <text>缤纷稻城</text>
+    <a href="#">更多 >></a>
+  </view>
+  <view class="scenic">
+    <view class="img-title">
+      <text>稻城红草地</text>
+      <image src="https://cn.yadingtour.com/templates/rt_denali/custom/images/2019_10/20191022173001.jpg"></image>
+    </view>  
+    <view class="img-title">
+      <text>稻城青杨林</text>
+      <image src="https://cn.yadingtour.com/templates/rt_denali/custom/images/2019_10/20191022173002.jpg"></image>
+    </view>
+    <view class="img-title">
+      <text>稻城白塔</text>
+      <image src="https://cn.yadingtour.com/templates/rt_denali/custom/images/2019_10/20191022173003.jpg"></image>
+    </view>
+    <view class="img-title">
+      <text>稻城俄初山</text>
+      <image src="https://cn.yadingtour.com/templates/rt_denali/custom/images/2019_10/20191022173005.jpg"></image>
+    </view>
+  </view>
+</view>
+<!-- 探索新发现 -->
+<view class="tsfx-container">
+  <view class="bfdc">
+    <text>探索发现</text>
+    <a href="#">更多 >></a>
+  </view>
+  <view class="amusement">
+    <view class="img-title" bindtap="goToFood">
+      <text>吃</text>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191022164006.jpg"></image>
+    </view>  
+    <view class="img-title" bindtap="goToLive">
+      <text>住</text>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191023134001.jpg"></image>
+    </view>
+    <view class="img-title" bindtap="goToPlay">
+      <text>玩</text>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191023173005.jpg"></image>
+    </view>
+    <view class="img-title" bindtap="goToAmmuse">
+      <text>乐</text>
+      <image src="https://cn.yadingtour.com/images/2019_10/20191023155008.jpg"></image>
+    </view>
+  </view>
+</view>
+<!-- 底部开启旅行地图栏 -->
+<view class="tour">
+  <l-button type="success" shape="semicircle">开启旅行</l-button>
+</view>
+

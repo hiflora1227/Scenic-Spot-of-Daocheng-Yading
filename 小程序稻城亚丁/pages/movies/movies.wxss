@@ -1,0 +1,65 @@
+/* pages/movies/movies.wxss */
+/* 页面布局 */
+page{
+  background-color: #F2F2F2;
+}
+/* 总容器 */
+.movies-container{
+  display: flex;
+  flex-direction: column;
+}
+.movies-search{
+  display: flex;
+  flex-direction: row;
+  margin:35rpx 15rpx;
+}
+input{
+  width: 300rpx;
+  margin-left: 50rpx;
+}
+/* 正在热映 */
+.movies-list{
+  font-size: 36rpx;
+  background-color: snow;
+  padding: 35rpx 0;
+  margin-bottom: 50rpx;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+}
+.title text{
+  color: #808080;
+}
+.title a{
+  margin-left: 480rpx;
+  display: flex;
+  flex-direction: row;
+  color: #FFC0CB;
+}
+.title a l-icon{
+  margin:8rpx 0 0 8rpx;
+}
+.movie{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* 电影海报 */
+.movies-list .movie li text{
+  display: block;
+  margin-top: 10rpx; 
+  color: #808080;  
+}
+.moviesTitle{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200rpx;
+}
+image{
+  width: 220rpx;
+  height: 330rpx;
+  margin-top:45rpx ;
+  margin-left: 5rpx;
+}

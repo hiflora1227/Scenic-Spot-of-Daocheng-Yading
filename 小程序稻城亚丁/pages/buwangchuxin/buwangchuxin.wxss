@@ -1,0 +1,51 @@
+/* pages/buwangchuxin/buwangchuxin.wxss */
+page{
+  background: linear-gradient(to right, #f3b60d 0%, #ff3627 100%);
+}
+/* 顶部搜索栏 */
+.search{
+  display: flex;
+  margin-top: 30rpx;
+}
+.search l-icon{
+  margin: 12rpx 50rpx 0 30rpx;
+}
+.img-container{
+  text-align: center;
+}
+/* 首图 */
+image{
+  border-radius: 30rpx;
+  margin: 60rpx 0 30rpx 0;
+}
+/* 习近平主题教育 */
+.x-education l-card{
+  margin-top: 20rpx;
+}
+.x-education ,.d-education{
+  text-align: center;  
+}
+/* 卡片外顶部标题 */
+.top-title{
+  display: block;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40rpx;
+}
+.x-education l-card .right-card{
+  width: 220rpx;
+  height: 220rpx;
+}
+.x-education l-card .l-title,.d-education l-card .l-title{
+  margin: 70rpx 0 30rpx 0;
+  font-size: 35rpx;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+/* 稻城主题教育 */
+.d-education{
+  margin-top: 60rpx;
+  padding-top:60rpx ;
+  border-top: 1px solid #bfbfbf;
+}

@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/posts/posts",
+    "pages/post-detail/post-detail",
+    "pages/movies/movies",
+    "pages/movies-more/movies-more",
+    "pages/movies-detail/movies-detail",
+    "pages/zhihuiyading/zhihuiyading",
+    "pages/shouye/shouye",
+    "pages/buwangchuxin/buwangchuxin",
+    "pages/meishi/meishi",
+    "pages/zhu/zhu",
+    "pages/wan/wan",
+    "pages/le/le"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F1CE8D",
+    "navigationBarTitleText": "微信小程序01",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

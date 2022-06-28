@@ -1,0 +1,57 @@
+/* pages/le/le.wxss */
+/* 标题 */
+.l-title{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.right-card{
+  border-radius: 20rpx;
+}
+/* 文字折叠显示 */
+.content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #bfbfbf;
+}
+/* 修改列数 */
+.ellipsis {
+  -webkit-line-clamp:5;
+}
+/* 展示全部 */
+.unellipsis {
+  -webkit-line-clamp:;
+  color: #888787;
+}
+.fold{
+  color: orange;
+}
+/* 评论区 */
+.comments{
+  margin: 40rpx 10rpx;
+}
+.comments>text{
+  margin:0 0 0 30rpx;
+  font-size: 38rpx;
+}
+.like-container,.avter-share-container{
+  display: flex;
+}
+.avter-share-container{
+  margin:40rpx 0 10rpx 280rpx;
+}
+.number{
+  margin:-8rpx 10rpx 0 10rpx;
+}
+/* 底部发表评论 */
+.bottom{
+  display: flex;
+  margin-left: 35rpx;
+}
+input{
+  width: 500rpx;
+  height: 70rpx;
+  border: 1px solid #888787;
+  border-radius: 10rpx;
+}

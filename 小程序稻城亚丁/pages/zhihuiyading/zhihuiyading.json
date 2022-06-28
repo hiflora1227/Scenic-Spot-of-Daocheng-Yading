@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-slide-view":"/miniprogram_npm/lin-ui/slide-view/index",
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index",
+    "l-grid":"/miniprogram_npm/lin-ui/grid/index"
+  },
+  "navigationBarTitleText": "智慧亚丁"
+}

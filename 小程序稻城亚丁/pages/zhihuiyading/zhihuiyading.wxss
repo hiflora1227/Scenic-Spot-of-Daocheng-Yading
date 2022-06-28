@@ -1,0 +1,97 @@
+/* pages/zhihuiyading/zhihuiyading.wxss */
+/* 搜索条 */
+.search{
+  margin: 20rpx 10rpx;
+  display: flex;
+}
+/* 获取当前位置 */
+.header{
+  display: flex;
+}
+.localtion{
+  margin:8rpx 60rpx 0 20rpx;
+}
+l-icon{
+  margin:10rpx 0 0 8rpx;
+}
+/* 轮播图 */
+.swiper{
+  margin: 20rpx 30rpx;
+  border-radius: 20rpx;
+  border: 1px solid orange;
+}
+swiper{
+  width: 100%;
+  height: 320rpx;
+}
+swiper image{
+  width: 100%;
+  height: 100%;
+}
+/* 缤纷稻城 */
+.bfdc-container,.tsfx-container{  
+  font-size: 34rpx;
+  margin: 30rpx 30rpx;
+  border-radius: 15rpx;
+  border: 1px solid #1F4957;
+}
+.scenic{
+  display: flex;
+  overflow: auto;
+}
+.bfdc{
+  margin-top: 20rpx;
+}
+.bfdc a{
+  font-size: 28rpx;
+}
+.bfdc text{
+  margin:0rpx 390rpx 30rpx 20rpx;
+}
+
+.img-title text{
+  position: relative;
+  top: 150rpx;
+  left: 90rpx;
+  color: #fff;
+  font-family: STXinwei;
+  display: inline-block;
+  /* background-color: rgba(31,73,87,.4); */
+}
+.img-title image{
+  height:260rpx;
+  width: 280rpx;
+  border-radius: 15rpx;
+  margin:-10rpx 30rpx 10rpx 30rpx;
+}
+
+/* 探索发现 */
+.tsfx-container{
+  width: 680rpx;
+}
+.amusement{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.amusement .img-title{
+  flex-shrink: 0;
+  width: 289rpx;
+  height: 288rpx;
+  margin:-20rpx 45rpx 30rpx 0rpx;  
+}
+.amusement .img-title image{
+  margin:-260rpx 0 10rpx 30rpx;
+}
+.amusement .img-title text{
+  background-color: rgba(255, 255, 255, .4);
+  padding: 105rpx 130rpx;
+  left: 0rpx;
+  top: 30rpx;
+  font-size: 60rpx;
+  font-family: STXingkai;
+}
+/* 开启旅行 */
+.tour{
+  text-align: center;
+}

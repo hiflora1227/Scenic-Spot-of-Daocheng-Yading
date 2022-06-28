@@ -1,0 +1,37 @@
+<!--pages/posts/posts.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <swiper autoplay indicator-dots>
+    <swiper-item>
+      <image src="https://m15.360buyimg.com/mobilecms/s1062x420_jfs/t1/94250/10/20205/134572/61db8ae7E876ca280/5be713e26eb02641.jpg!cr_1053x420_4_0!q70.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://m15.360buyimg.com/mobilecms/s1062x420_jfs/t1/181068/13/16622/771845/6102a71aE15dbe36e/c7f4953bb30e1efe.png!cr_1053x420_4_0!q70.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://m15.360buyimg.com/mobilecms/jfs/t1/178078/29/23073/135349/6258ee6cE3f924089/b8142738a5bfdaf2.jpg!cr_1053x420_4_0!q70.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view wx:for="{{postList}}" wx:key="postId">
+  <view class="post-container" bindtap="onGoToDetail" data-posts-id="{{item.postId}}">
+    <!-- 头像、昵称 -->
+    <view class="post-author">
+      <image class="post-author-img" src="{{item.headImgSrc}}"></image>
+      <text class="post-author-data">{{item.author}}</text>
+    </view>
+    <!-- 标题 -->
+    <text class="post-title">{{item.title}}</text>
+    <!-- 图片 -->
+    <image class="post-img" src="{{item.imgSrc}}"></image>
+    <!-- 摘要 -->
+    <text class="post-abstract">{{item.content}}</text>
+    <!-- 点赞、浏览次数 -->
+    <view class="post-view">
+      <l-icon name="like" />
+      <text class="post-view-font">{{item.reading}}</text>
+      <l-icon name="eye" />
+      <text class="post-view-font">{{item.collection}}</text>
+    </view>
+  </view>
+</view>

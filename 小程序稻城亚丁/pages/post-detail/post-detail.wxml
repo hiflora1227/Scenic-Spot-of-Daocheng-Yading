@@ -1,0 +1,24 @@
+<!--pages/post-detail/post-detail.wxml-->
+<view class="detail-container">
+<!-- 顶部图片 -->
+  <image class="head-img" src="{{postdata.headImgSrc}}"></image>
+  <view class="detail-author">
+  <!-- 头像 -->
+    <image class="avatar" src="{{postdata.avatar}}"></image>
+    <!-- 昵称 -->
+    <text class="author">{{postdata.author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{postdata.date}}</text>
+  </view>
+  <!-- 标题 -->
+  <view class="tool">
+        <view class="circle">
+            <image class="circle-img" src="/images/icon/collection.png"></image>
+            <image class="circle-img" src="/images/icon/share.png"></image>
+        </view>
+        <image class="horizon"></image>
+    </view>    
+  <text class="title">{{postdata.title}}</text>
+  <!-- 正文 -->
+  <text class="detail">{{postdata.detail}}</text>  
+</view>

@@ -1,0 +1,45 @@
+<!--pages/movies/movies.wxml-->
+<view class="movies-container">
+  <!-- 顶部搜索框 -->
+  <view class="movies-search">
+    <l-icon name="research" color="#FFC0CB" size="40"/>
+    <input type="text" placeholder="请输入关键字搜索"/>
+  </view>
+  <!-- 正在热映 -->
+  <view class="movies-list">
+    <view class="title">
+      <text>正在热映</text>
+      <!-- <l-list title="购物车" /> -->
+      <a bindtap="onGoToMore">
+        更多
+        <l-icon name="right" color="#FFC0CB" size="30"/>
+      </a>
+    </view>
+    <ul class="movie">
+      <li wx:for="{{subjects}}" wx:if="{{index>0&&index<4}}" wx:key="id">
+        <image src="{{item.images.large}}"></image>
+        <text class="moviesTitle">{{item.title}}</text>
+        <text>暂无评分</text>
+      </li>
+    </ul>
+  </view>
+  <!-- 即将上映 -->
+  <view class="movies-list">
+    <view class="title">
+      <text>即将上映</text>
+      <!-- <l-list title="购物车" /> -->
+      <a bindtap="onGoToMore">
+        更多
+        <l-icon name="right" color="#FFC0CB" size="30"/>
+      </a>
+    </view>
+    <ul class="movie">
+      <li wx:for="{{subjects}}" wx:if="{{index>4&&index<8}}" wx:key="id">
+        <image src="{{item.images.large}}"></image>
+        <text class="moviesTitle">{{item.title}}</text>
+        <text>暂无评分</text>
+      </li>
+    </ul>
+  </view>
+</view>
+

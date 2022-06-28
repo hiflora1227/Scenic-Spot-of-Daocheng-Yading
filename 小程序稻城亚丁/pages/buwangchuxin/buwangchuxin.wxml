@@ -1,0 +1,39 @@
+<!--pages/buwangchuxin/buwangchuxin.wxml-->
+<!-- 顶部搜索框 -->
+<view class="search">  
+  <l-icon name="scan" size="30"/>
+  <l-search-bar placeholder="搜索" bg-color="#f6f6f6" shape="circle"/>
+</view>
+<!-- 首图 -->
+<view class="img-container">
+  <image src="https://cn.yadingtour.com/templates/rt_supra/custom/images/2019_11/bwcxzt01.jpg"></image>
+</view>
+  
+<!-- 习近平主题教育 -->
+<view class="x-education">
+  <text class="top-title">习近平指导开展主题教育</text>
+  <l-card wx:for="{{bwList}}" wx:if="{{index>0&&index<4}}" wx:key="id" type="primary" 
+          l-title-class="l-title"
+           l-img-class="right-card" 
+           image="{{item.img}}"
+    title="{{item.title}}">
+    <view class="content">
+      <l-button type="success" shape="semicircle">开始阅读</l-button>
+    </view>
+  </l-card>
+</view>
+<!-- 稻城亚丁主题教育 -->
+<view class="d-education">
+  <text class="top-title">稻城亚丁"不忘初心 牢记使命"主题教育</text>
+  <l-card wx:for="{{bwList}}" wx:if="{{index>4}}" wx:key="id"  type="primary"
+          l-title-class="l-title"
+           l-img-class="right-card" 
+           image="{{item.img}}"
+    title="{{item.title}}">
+    <view class="content">
+      <l-button type="success" shape="semicircle">
+        <navigator url="{{item.link}}">开始阅读</navigator>
+      </l-button>
+    </view>
+  </l-card>
+</view>

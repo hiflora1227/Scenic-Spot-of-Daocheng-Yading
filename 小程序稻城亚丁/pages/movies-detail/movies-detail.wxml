@@ -1,0 +1,50 @@
+<!--pages/movies-detail/movies-detail.wxml-->
+<view class="detail-container">
+<!-- 顶部背景图部分 -->
+  <view class="detail-top">
+    <image class="bgp" src="{{moviesdata.images.large}}"></image>
+    <view class="describe"> 
+      <text class="t1">{{moviesdata.title}}</text>
+      <text class="nation">{{moviesdata.countries}}·{{moviesdata.year}}</text>
+      <view class="like-view">
+        <text class="like">{{moviesdata.reviews_count}}</text>人喜欢
+        <text class="view">{{moviesdata.comments_count}}</text>条评论
+      </view>
+    </view>
+  </view>
+  <image class="large" src="{{moviesdata.images.large}}"></image>
+  <!-- 英文名+评分+导演... -->
+  <view class="detail-brief">
+    <text>Fantastic</text>
+    <view class="info">
+      <text>评分 {{moviesdata.rating.average}}</text>
+      <text>导演 {{moviesdata.directors[0].name}}</text>
+      <view class="actor">影人
+        <ul>
+          <li class="circ" wx:for="{{moviesdata.casts}}" wx:key="index">{{item.name}} </li>      
+        </ul> 
+      </view>  
+      <text>类型 {{moviesdata.genres}}</text>   
+    </view>
+  </view>
+  <!-- 剧情简介 -->
+  <view class="content">
+    剧情简介
+    <view>
+      <text>{{moviesdata.summary}}</text>
+    </view>
+    
+  </view>
+  <!-- 影人 -->
+  <view class="avatars">
+    影人
+    <view class="actor-img">
+        <ul>        
+          <li class="circ" wx:for="{{moviesdata.casts}}" wx:key="index">
+            <image src="{{item.avatars.large}}"></image>
+          {{item.name}} 
+          </li>      
+        </ul> 
+      </view>  
+  </view>
+</view>

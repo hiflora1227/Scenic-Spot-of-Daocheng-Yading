@@ -1,0 +1,10 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <!-- <image class="user-prophoto" src="../../images/shuijiao.jpg"></image> -->
+  <l-avatar class="l-avatar" shape="circle" size = "160" placement="bottom" open-data="{{['userAvatarUrl','userNickName']}}" />   
+  <text class="title">微信小程序</text>
+  <!-- <l-button type="default">default</l-button> -->
+  <view class="btn-container" bindtap = 'onTap'>    
+    <text class="text-container">稻城亚丁</text>
+  </view>
+</view>

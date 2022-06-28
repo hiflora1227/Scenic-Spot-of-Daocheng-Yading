@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "l-slide-view":"/miniprogram_npm/lin-ui/slide-view/index",
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index",
+    "l-card":"/miniprogram_npm/lin-ui/card/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index"
+  },
+  "navigationBarTitleText": "不忘初心",
+  "navigationBarBackgroundColor": "#F30122"
+}
