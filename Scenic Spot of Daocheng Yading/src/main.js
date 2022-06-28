@@ -11,13 +11,23 @@ import router from './router';
 // 导入 vue的ajax插件
 import VueResource from 'vue-resource';
 
+// 引入axios
+import axios from 'axios'
+
+Vue.prototype.$http = axios // 将请求模块挂载到实例模型上
+
+
 // 全局引入elementui组件
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 // 引入部分组件
-import { Button } from 'element-ui';
+import { Button,Form,FormItem,Input,Message } from 'element-ui';
 // 使用部分组件
 Vue.use(Button)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.prototype.$message = Message
 // Vue.use(Select)
 
 //导入mint-ui组件库
@@ -54,6 +64,9 @@ Vue.http.options.emulateJSON = true
 const vm = new Vue({
     el:'#app',
     render: c=>c(app),
+    beforeCreate(){
+        Vue.prototype.$bus = this//安装全局事件总线
+    },
     // 挂载路由
     router
 })
