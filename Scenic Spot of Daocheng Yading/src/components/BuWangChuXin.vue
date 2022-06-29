@@ -1,7 +1,17 @@
 <template>
     <div class="chuxin-container">
+        <!--顶部logo+侧滑栏  -->
         <span @click="getNavShow" id="icon" class="mui-icon mui-icon-bars"></span>
 		<div class="canvas" v-show="show">	
+            <!-- 登录区 -->
+            <section class="login">
+                <div class="mui-card-header mui-card-media">
+                    <img src="../images/logo.png" />
+                    <div id="login-username" class="mui-media-body" ref="nickname">                        
+                        <!-- 用户名占位 -->
+                    </div>
+                </div>
+            </section>
 			<ul>
 				<li>
 					<router-link to="/shouye">首页</router-link>
@@ -19,9 +29,10 @@
 					<router-link to="/zhihuiyading">智慧亚丁</router-link>
 				</li>
 				<li>
-					<router-link to="/heart">不忘初心</router-link>
+					<router-link to="buwangchuxin">不忘初心</router-link>
 				</li>
 			</ul>
+            <el-button class="logout" type="info" @click="logout">退出登录</el-button>
 		</div>
         <div ref="mainContent">
         <!-- 顶部图片栏 -->
@@ -58,19 +69,32 @@
             <a target="_blank" href="http://www.scjb.gov.cn/"><img src="https://cn.yadingtour.com/images/2019_10/Report2.png">四川省互联网举报中心</a>
         </footer>
     </div>
+        <!-- 回到顶部按钮 -->        
+        <el-button @click="backTop" class="back-top" icon="el-icon-arrow-up" circle></el-button>
     </div>
 </template>
 
 <script>
+var username
     export default {
         name:'BuWangChuXin',
         data() {
             return {
                 eList:[],
-                show:false
+                show:false,
+                scroll: 0,
             }
         },
         methods: {
+             // 退出登录事件
+            logout() {
+            window.sessionStorage.clear()
+            this.$router.push('/login')
+            },
+            //返回顶部事件
+            backTop(){                
+                document.documentElement.scrollTop = 0;
+            },
             // 侧滑栏出现、隐藏
             getNavShow(){
 				this.show = !this.show                  
@@ -90,40 +114,73 @@
         created() {
             this.getInfo()
         },
+        mounted(){
+            
+            this.$nextTick(() => {
+                // 获取用户信息
+                this.$bus.$on('login',(data)=>{
+                    console.log('收到数据',data) 
+                    username = data
+                })
+                console.log(this.$refs.nickname.innerText = username)
+            });
+	    },
     }
 </script>
 
 <style lang="scss" scoped>
-
+    
     .chuxin-container{
         background-color: #fff;
-        /* 侧边栏 */
-        #icon{
-            position: sticky;
-            color:black;
-            font-size: 20px;
-            font-weight: bold;
-            top: 60px;
-            left: 40px;
-        }
-        .canvas{
-            width: 160px;
-            height: 1854px;
-            float: left;
-            background-color: #2276E3;
-            overflow: auto;
-            ul{
-                margin-top: 100px;
-                li{
-                    font-size: 20px;
-                    font-weight: bold;
-                    margin: 20px -34px;
-                    a{
-                        color: #fff;
-                    }
-                }
-            }
-        }
+        margin-top: -25px;
+        .back-top{
+            position: fixed;
+            right: 20px;
+            bottom: 150px;
+    }
+/* 侧边栏 */
+/* 登录部分 */
+.login{
+    margin: 70px 0 -50px 0;
+}
+#login-username{
+    color: #fff;
+    font-size: 18px;
+    /* padding                                                                                                                                                         -top: 10px; */
+}
+#icon{
+	position: sticky;
+    color:#000000;
+    font-size: 24px;
+    font-weight: bold;
+	top: 40px;
+	left: 40px;
+    z-index: 999;
+}
+.canvas{
+	width: 160px;
+	height: 890px;
+	/* float: left; */
+	background-color: #0c82e2;
+	overflow: auto;
+	position: fixed;
+}
+.canvas ul{
+	margin-top: 100px;
+}
+.canvas ul li{
+	font-size: 20px;
+    font-weight: bold;
+	margin: 20px -34px;
+
+}
+.canvas ul li a {	
+	color: #fff;
+}
+/* 退出登录按钮 */
+.logout{
+    margin: 370px 0 0 30px;
+}
         /* 页面主要内容区 */
         .main-content{
             margin-left: 160px;  }   

@@ -5,17 +5,26 @@ import VueRouter from 'vue-router';
 //通过Vue使用路由（手动安装）
 Vue.use(VueRouter)
 
+
+// 新增修改方法：获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+// 新增修改方法：修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
 //导入组件
 import ZhiHuiYaDing from "./components/ZhiHuiYaDing.vue";
 import BuWangChuXin from "./components/BuWangChuXin.vue";
-import ZhuanTiZhuanLan from "./components/ZhuanTiZhuanLan.vue";
 import LoginComponents from "./components/LoginComponents.vue";
+import RegisterComponents from "./components/RegisterComponents.vue";
 import ShouYe from "./components/ShouYe.vue"
 
 //创建路由对象
 const router = new VueRouter({
     routes: [
         {path:'/',redirect:'/login'},
+        {path:'/register',component:RegisterComponents,redirect:'/login'},
         {name:"login",path:'/login',component:LoginComponents},
         {   path:'/shouye',
             component:ShouYe
@@ -25,9 +34,6 @@ const router = new VueRouter({
         },
         {   path:'/buwangchuxin',
             component:BuWangChuXin
-        },
-        {   path:'/zhuantizhuanlan',
-            component:ZhuanTiZhuanLan
         }
     ],
     // 设置link的高亮显示

@@ -34,197 +34,198 @@
 			</ul>
             <el-button class="logout" type="info" @click="logout">退出登录</el-button>
 		</div>
-        <div ref="mainContent">
-            <header>
-                <img class="logo" src="https://cn.yadingtour.com/templates/rt_denali/custom/images/home/logo-1.png" alt="">
-            </header>
-            <!-- 中间轮播图 -->
-            <main>
-                <!-- 大图 -->
-                <mt-swipe class="large" :show-indicators="false" :auto="4500">
-                    <mt-swipe-item>
-                        <div class="content">
-                            <h1>游览路线</h1>
-                            <p>亲近自然，体验当地风土人情，才是旅行的意义</p>
-                        </div>
-                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <div class="content">
-                            <h1>交通路线</h1>
-                            <p>去川西稻城亚丁旅游交通方式你真的选对了吗？</p>
-                        </div>
-                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <div class="content">
-                            <h1>沿途风光</h1>
-                            <p>十月的桑堆会被红草染上艳丽的橘红色，秋日里的河滩和道路会有青杨林点缀耀眼的金黄，还有那矗立在稻城的白塔，巍峨洁净，庄严神圣。</p>
-                        </div>
-                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <div class="content">
-                            <h1>住宿体验</h1>
-                            <p>体验一场藏式风情民宿，或者甄选舒适型酒店，每种都会有别样的感受。</p>
-                        </div>
-                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <div class="content">
-                            <h1>特色风味</h1>
-                            <p>川味麻辣鲜香，藏式香酥甜脆。</p>
-                        </div>
-                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
-                    </mt-swipe-item>
-                </mt-swipe>
-                <!-- 缩略图部分 -->
-                <!-- 图标 -->
-                <div class="slider-icon">
-                    <span class="mui-icon mui-icon-back"></span>
-                    <span class="mui-icon mui-icon-forward"></span>
-                </div>
-                
-                <div class="small" >
-                    <mt-swipe :show-indicators="false" :auto="4000">
+
+            <div ref="mainContent">
+                <header>
+                    <img class="logo" src="https://cn.yadingtour.com/templates/rt_denali/custom/images/home/logo-1.png" alt="">
+                </header>
+                <!-- 中间轮播图 -->
+                <main>
+                    <!-- 大图 -->
+                    <mt-swipe class="large" :show-indicators="false" :auto="4500">
                         <mt-swipe-item>
-                            <div>
-                                <div class="img-container">                                
-                                    <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
-                                </div>
-                                <p class="title">游览路线</p>
+                            <div class="content">
+                                <h1>游览路线</h1>
+                                <p>亲近自然，体验当地风土人情，才是旅行的意义</p>
                             </div>
-                            <div>
-                                <div class="img-container">                                
-                                    <img src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
-                                </div>
-                                <p class="title">交通路线</p>
-                            </div>                        
+                            <img src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
                         </mt-swipe-item>
                         <mt-swipe-item>
-                            <div>
-                                <div class="img-container">                                
-                                    <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
-                                </div>
-                                <p class="title">交通路线</p>
+                            <div class="content">
+                                <h1>交通路线</h1>
+                                <p>去川西稻城亚丁旅游交通方式你真的选对了吗？</p>
                             </div>
-                            <div>
-                                <div class="img-container">                                
-                                    <img src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
-                                </div>
-                                <p class="title">沿途风光</p>
-                            </div>
+                            <img src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
                         </mt-swipe-item>
                         <mt-swipe-item>
-                        <div>
-                                <div class="img-container">                                
-                                    <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
-                                </div>
-                                    <p class="title">沿途风光</p>
+                            <div class="content">
+                                <h1>沿途风光</h1>
+                                <p>十月的桑堆会被红草染上艳丽的橘红色，秋日里的河滩和道路会有青杨林点缀耀眼的金黄，还有那矗立在稻城的白塔，巍峨洁净，庄严神圣。</p>
                             </div>
-                            <div>
-                                <div class="img-container">                                
-                                    <img src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
-                                </div>
-                                <p class="title">住宿体验</p>
-                            </div>
+                            <img src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
                         </mt-swipe-item>
                         <mt-swipe-item>
-                            <div>
-                                <div class="img-container">                                
-                                    <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
-                                </div>
-                                    <p class="title">住宿体验</p>
+                            <div class="content">
+                                <h1>住宿体验</h1>
+                                <p>体验一场藏式风情民宿，或者甄选舒适型酒店，每种都会有别样的感受。</p>
                             </div>
-                            <div>
-                                <div class="img-container">                                
-                                    <img src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
-                                </div>
-                                <p class="title">特色风味</p>
-                            </div>
+                            <img src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
                         </mt-swipe-item>
                         <mt-swipe-item>
-                            <div>
-                                <div class="img-container">                                
-                                    <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
-                                </div>
-                                <p class="title">特色风味</p>
+                            <div class="content">
+                                <h1>特色风味</h1>
+                                <p>川味麻辣鲜香，藏式香酥甜脆。</p>
                             </div>
-                            <div>
-                                <div class="img-container">                                
-                                    <img src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
-                                </div>
-                                <p class="title">游览路线</p>
-                            </div>
+                            <img src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
                         </mt-swipe-item>
                     </mt-swipe>
-                </div>
-                <!-- 轮播图--底部标题 -->
-                <div class="traffic-title">
-                    <p>TRAFFIC ROUTES</p>
-                    <div>
-                        交通路线
+                    <!-- 缩略图部分 -->
+                    <!-- 图标 -->
+                    <div class="slider-icon">
+                        <span class="mui-icon mui-icon-back"></span>
+                        <span class="mui-icon mui-icon-forward"></span>
                     </div>
-                </div>
-            </main>
-            
-            <!-- 图片切换/展示 -->
-            <section class="img-show">
-                <div id="test" >
-                    <transition name="hello" appear>
-                        <img ref="img" v-bind:src = "'https://cn.yadingtour.com/images/2019_10/2019102114400'+num+'.jpg'"/><br>
-                    </transition> 
-                    <div id="left" @click = "changeleft" >  &lt; </div> 
-                    <div id="right" @click = "changeright" > &gt; </div>                   
-                </div>
-            </section>
-
-            <!-- 亚丁圣地介绍 -->
-            <section class="yading-intr">
-                <div class="detail-title">
-                    <h2>亚丁圣地</h2>
-                    <h3>中国香格里拉之魂</h3>
-                </div>
-                <div class="detail-content">
-                    <p>这是水蓝色星球上的最后一片净土，这是有着神秘宗教文化的藏区圣地。稻城被誉为“中国香格里拉之魂”，这里有纯净的蓝天，还有神秘的藏族的风情。</p>
-                    <p>仙乃日、央迈勇、夏洛多吉三座雪山拔地而起，雪山峰形形状各异，洁白无瑕，一层不染。珍珠海、牛奶海、五色海轻盈碧蓝，阳光下的湖面，波光粼粼，能瞬间让人平静下来。雪峰、森林、溪流、草甸、湖泊的组合，托出了一方静谧的净土。</p>
-                </div>
-            </section>
-            <!-- 吃喝玩乐模块 -->
-            <section class="relax">
-                <div class="top-bar">
-                    <h2>吃喝玩乐</h2>
-                    <div class="search">
-                        <!-- 下拉框 -->
-                        <div class="mui-content">
-                            <div class="mui-card">
-                                <ul class="mui-table-view mui-table-view-chevron">
-                                    <li class="mui-table-view-cell mui-collapse">
-                                        <a href="#"><span class="mui-icon mui-icon-bars"></span>&nbsp;&nbsp;ALL</a>
-                                        <ul class="mui-table-view mui-table-view-chevron">
-                                            <li @click="afterSelector1" ref="text1" class="mui-table-view-cell">游玩</li>
-                                            <li @click="afterSelector2" ref="text2" class="mui-table-view-cell">美食</li>
-                                            <li @click="afterSelector3" ref="text3" class="mui-table-view-cell">住宿</li>
-                                            <li @click="afterSelector4" ref="text4" class="mui-table-view-cell">娱乐</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                    
+                    <div class="small" >
+                        <mt-swipe :show-indicators="false" :auto="4000">
+                            <mt-swipe-item>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
+                                    </div>
+                                    <p class="title">游览路线</p>
+                                </div>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
+                                    </div>
+                                    <p class="title">交通路线</p>
+                                </div>                        
+                            </mt-swipe-item>
+                            <mt-swipe-item>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133002.jpg">
+                                    </div>
+                                    <p class="title">交通路线</p>
+                                </div>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
+                                    </div>
+                                    <p class="title">沿途风光</p>
+                                </div>
+                            </mt-swipe-item>
+                            <mt-swipe-item>
+                            <div>
+                                    <div class="img-container">                                
+                                        <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133003.jpg">
+                                    </div>
+                                        <p class="title">沿途风光</p>
+                                </div>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
+                                    </div>
+                                    <p class="title">住宿体验</p>
+                                </div>
+                            </mt-swipe-item>
+                            <mt-swipe-item>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133004.jpg">
+                                    </div>
+                                        <p class="title">住宿体验</p>
+                                </div>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
+                                    </div>
+                                    <p class="title">特色风味</p>
+                                </div>
+                            </mt-swipe-item>
+                            <mt-swipe-item>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img class="current" src="https://cn.yadingtour.com/images/2019_10/20191021133005.jpg">
+                                    </div>
+                                    <p class="title">特色风味</p>
+                                </div>
+                                <div>
+                                    <div class="img-container">                                
+                                        <img src="https://cn.yadingtour.com/images/2019_10/20191021133001.jpg">
+                                    </div>
+                                    <p class="title">游览路线</p>
+                                </div>
+                            </mt-swipe-item>
+                        </mt-swipe>
+                    </div>
+                    <!-- 轮播图--底部标题 -->
+                    <div class="traffic-title">
+                        <p>TRAFFIC ROUTES</p>
+                        <div>
+                            交通路线
                         </div>
-                    </div>                
-                </div>
-                <!-- 图文列表 -->
-                <div class="relax-detail">
-                    <ul>
-                        <li v-for="item in list" :key="item.id">
-                            <div>{{item.sign}}</div>
-                            <img :src="item.img">
-                            <p>{{item.title}}</p>
-                            <p class="relax-detail-content">{{item.content}}</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                    </div>
+                </main>
+                
+                <!-- 图片切换/展示 -->
+                <section class="img-show">
+                    <div id="test" >
+                        <transition name="hello" appear>
+                            <img ref="img" v-bind:src = "'https://cn.yadingtour.com/images/2019_10/2019102114400'+num+'.jpg'"/><br>
+                        </transition> 
+                        <div id="left" @click = "changeleft" >  &lt; </div> 
+                        <div id="right" @click = "changeright" > &gt; </div>                   
+                    </div>
+                </section>
+
+                <!-- 亚丁圣地介绍 -->
+                <section class="yading-intr">
+                    <div class="detail-title">
+                        <h2>亚丁圣地</h2>
+                        <h3>中国香格里拉之魂</h3>
+                    </div>
+                    <div class="detail-content">
+                        <p>这是水蓝色星球上的最后一片净土，这是有着神秘宗教文化的藏区圣地。稻城被誉为“中国香格里拉之魂”，这里有纯净的蓝天，还有神秘的藏族的风情。</p>
+                        <p>仙乃日、央迈勇、夏洛多吉三座雪山拔地而起，雪山峰形形状各异，洁白无瑕，一层不染。珍珠海、牛奶海、五色海轻盈碧蓝，阳光下的湖面，波光粼粼，能瞬间让人平静下来。雪峰、森林、溪流、草甸、湖泊的组合，托出了一方静谧的净土。</p>
+                    </div>
+                </section>
+                <!-- 吃喝玩乐模块 -->
+                <section class="relax">
+                    <div class="top-bar">
+                        <h2>吃喝玩乐</h2>
+                        <div class="search">
+                            <!-- 下拉框 -->
+                            <div class="mui-content">
+                                <div class="mui-card">
+                                    <ul class="mui-table-view mui-table-view-chevron">
+                                        <li class="mui-table-view-cell mui-collapse">
+                                            <a href="#"><span class="mui-icon mui-icon-bars"></span>&nbsp;&nbsp;ALL</a>
+                                            <ul class="mui-table-view mui-table-view-chevron">
+                                                <li @click="afterSelector1" ref="text1" class="mui-table-view-cell">游玩</li>
+                                                <li @click="afterSelector2" ref="text2" class="mui-table-view-cell">美食</li>
+                                                <li @click="afterSelector3" ref="text3" class="mui-table-view-cell">住宿</li>
+                                                <li @click="afterSelector4" ref="text4" class="mui-table-view-cell">娱乐</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>                
+                    </div>
+                    <!-- 图文列表 -->
+                    <div class="relax-detail">
+                        <ul>
+                            <li v-for="item in list" :key="item.id">
+                                <div>{{item.sign}}</div>
+                                <img :src="item.img">
+                                <p>{{item.title}}</p>
+                                <p class="relax-detail-content">{{item.content}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             <!-- 底部风景展示轮播图 -->
             <section class="bottom-img-show">
                 <mt-swipe  :show-indicators="false" :auto="4500">
@@ -259,13 +260,14 @@
             <section class="bottom-text">
                 <p>&copy;2020甘孜州稻城亚丁景区管理局 蜀ICP备17010193号|技术支持[云竹软件&智慧旅游]</p>
             </section>
-        </div>
         <!-- 回到顶部按钮 -->        
         <el-button @click="backTop" class="back-top" icon="el-icon-arrow-up" circle></el-button>                
+    </div>
     </div>
 </template>
 
 <script>
+    
 var username
 // 下拉框
     window.addEventListener('toggle', function(event) {
@@ -290,7 +292,6 @@ var username
                 num: 1,
                 list:[],
                 selectList:[],
-                // username:'',
                 show:false,
                 scroll: 0,
             }
@@ -397,7 +398,7 @@ var username
 #login-username{
     color: #fff;
     font-size: 18px;
-    padding-top: 10px;
+    /* padding                                                                                                                                                         -top: 10px; */
 }
 #icon{
 	position: sticky;

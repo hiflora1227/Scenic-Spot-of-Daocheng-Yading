@@ -1,36 +1,36 @@
 <template>
-    <div class="login_container">
-    <!-- 登陆框 -->
-        <div class="login_box">
-        <!-- 默认登陆图标 -->
-            <div class="avatar_box">
-                <img src="../images/logo.png" alt="" />
-            </div>
-            <!-- 登录表单 -->
-            <el-form class="login_form" :model="loginForm" :rules="loginFormRules" ref="loginFormRef">
-                <!-- 用户名 -->
-                <el-form-item prop="username">
-                    <el-input placeholder="请输入用户名" v-model="loginForm.username" prefix-icon="iconfont icon-yonghu">
+  <div class="login_container">
+  <!-- 登陆框 -->
+    <div class="login_box">
+    <!-- 默认登陆图标 -->
+        <!-- <div class="avatar_box">
+            <img src="../images/logo.png" alt="" />
+        </div> -->
+        <!-- 登录表单 -->
+        <el-form class="login_form" :model="loginForm" :rules="loginFormRules" ref="loginFormRef">
+            <!-- 用户名 -->
+            <el-form-item prop="username">
+                <el-input placeholder="请输入用户名" v-model="loginForm.username" prefix-icon="iconfont icon-yonghu">
+            </el-input>
+            </el-form-item>
+
+            <!-- 密码 -->
+            <el-form-item prop="password">
+                <el-input v-model="loginForm.password"
+                    placeholder="请输入密码"
+                    prefix-icon="iconfont icon-mima"
+                    type="password">
                 </el-input>
-                </el-form-item>
+            </el-form-item>
 
-                <!-- 密码 -->
-                <el-form-item prop="password">
-                    <el-input v-model="loginForm.password"
-                        placeholder="请输入密码"
-                        prefix-icon="iconfont icon-mima"
-                        type="password">
-                    </el-input>
-                </el-form-item>
-
-                <!-- 按钮 -->
-                <el-form-item class="login_button">
-                    <el-button type="primary" @click="login">登录</el-button>
-                    <el-button type="primary">注册</el-button>
-                    <el-button type="info" @click="resetLoginForm">重置</el-button>
-                </el-form-item>
-            </el-form>
-        </div>
+            <!-- 按钮 -->
+            <el-form-item class="login_button">
+                <el-button type="primary" @click="login">登录</el-button>
+                <el-button type="primary" @click="register">注册</el-button>
+                <el-button type="info" @click="resetLoginForm">重置</el-button>
+            </el-form-item>
+        </el-form>
+    </div>
   </div>
 </template>
 
@@ -70,7 +70,7 @@
         async (valid) => {
             console.log(valid)
         if (!valid) return;
-        // 向api服务器发出登陆请求
+        // 向服务器发出登陆请求
         const { data: res } = await this.$http.get('static/login.json', this.loginForm)
         console.log(res)
         console.log(res.meta.status)
@@ -79,12 +79,15 @@
         this.$message.success('登陆成功！')
         // 1、将登陆成功之后的token，保存到客户端的sessionStorage中,进行身份验证
         window.sessionStorage.setItem('token', res.data.token)
-        // 2、通过编程式导航跳转到后台主页，路由地址为/home
+        // 2、通过编程式导航跳转到主页
         this.$router.push('/shouye')
       })
     //   将账号密码交给侧滑栏组件
       this.$bus.$emit('login',this.loginForm.username)
     },
+    register(){
+      // this.$router.push('/register')
+    }
   },
 };
 </script>
@@ -92,19 +95,21 @@
 <style lang="scss" scoped>
 /* login_container容器 */
 .login_container {
-  background-color: #2b4b6b;
-  height: 100%;
+  // background-color: #2b4b6b;
+  background: url(../images/login.jpg);
+  background-size: 480px;
+  height: 860px;
 }
 
 /* 登陆框容器 */
 .login_box {
   width: 450px;
   height: 300px;
-  background-color: #fff;
-  border-radius: 3px; /* 圆角边框 */
+  background-color: rgba($color: #fff, $alpha: .2);
+  border-radius: 10px; /* 圆角边框 */
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 63%;
   transform: translate(-50%, -50%); /* x、y轴各50% */
 }
 
