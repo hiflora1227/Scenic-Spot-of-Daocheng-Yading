@@ -1,7 +1,8 @@
 <template>
   <div>
+    这是首页
     <router-link to="/login">这是登录页面</router-link><br>
-    <router-link to="/login">这是注册页面</router-link><br>
+    <router-link to="/register">这是注册页面</router-link><br>
     <router-link to="/zhihuiyading">这是智慧亚丁页面</router-link><br>
     <router-link to="/zhuantizhuanlan">这是专题专栏页面</router-link><br>
     <router-link to="/buwangchuxin">这是不忘初心页面</router-link><br>

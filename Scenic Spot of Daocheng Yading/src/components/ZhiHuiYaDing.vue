@@ -217,7 +217,7 @@
                     <!-- 图文列表 -->
                     <div class="relax-detail">
                         <ul>
-                            <li v-for="item in list" :key="item.id">
+                            <li v-for="item in list" :key="item.id" @click="goToOrder(item)">
                                 <div>{{item.sign}}</div>
                                 <img :src="item.img">
                                 <p>{{item.title}}</p>
@@ -360,13 +360,22 @@ var username
                 let text = this.$refs.text4.innerHTML
                 console.log(text)
                 this.list = this.selectList.filter(item=>item.id>23&&item.id<32)
-            },          
+            }, 
+            goToOrder(item){
+                this.$router.push({
+                    name:'OrderList',
+                    params:item
+                })
+            }         
         },
         created() {
             this.getdata()
         },
         mounted(){
+            // 上拉加载
+            window.addEventListener('scroll', this.onContentScroll)
             
+            // 获取登录信息
             this.$nextTick(() => {
                 // 获取用户信息
                 this.$bus.$on('login',(data)=>{

@@ -26,7 +26,7 @@
             <!-- 按钮 -->
             <el-form-item class="login_button">
                 <el-button type="primary" @click="login">登录</el-button>
-                <el-button type="primary" @click="register">注册</el-button>
+                <!-- <el-button type="primary" @click="register">注册</el-button> -->
                 <el-button type="info" @click="resetLoginForm">重置</el-button>
             </el-form-item>
         </el-form>
@@ -71,14 +71,14 @@
             console.log(valid)
         if (!valid) return;
         // 向服务器发出登陆请求
-        const { data: res } = await this.$http.get('static/login.json', this.loginForm)
+        const { data: res } = await this.$http.get('http://36.139.132.253:3000/login', this.loginForm)
         console.log(res)
-        console.log(res.meta.status)
+        console.log(res[0].meta.status)
         // 判断结果状态，是否登陆成功，弹出弹框
-        if (res.meta.status !== 200) return this.$message.error('登陆失败！')
+        if (res[0].meta.status !== 200) return this.$message.error('登陆失败！')
         this.$message.success('登陆成功！')
         // 1、将登陆成功之后的token，保存到客户端的sessionStorage中,进行身份验证
-        window.sessionStorage.setItem('token', res.data.token)
+        window.sessionStorage.setItem('token', res[0].data.token)
         // 2、通过编程式导航跳转到主页
         this.$router.push('/shouye')
       })
@@ -86,7 +86,7 @@
       this.$bus.$emit('login',this.loginForm.username)
     },
     register(){
-      // this.$router.push('/register')
+      this.$router.push('/register')
     }
   },
 };

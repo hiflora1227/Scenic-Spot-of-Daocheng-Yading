@@ -18,19 +18,25 @@ import ZhiHuiYaDing from "./components/ZhiHuiYaDing.vue";
 import BuWangChuXin from "./components/BuWangChuXin.vue";
 import LoginComponents from "./components/LoginComponents.vue";
 import RegisterComponents from "./components/RegisterComponents.vue";
+import OrderList from "./components/OrderList.vue";
 import ShouYe from "./components/ShouYe.vue"
 
 //创建路由对象
 const router = new VueRouter({
     routes: [
         {path:'/',redirect:'/login'},
-        {path:'/register',component:RegisterComponents,redirect:'/login'},
+        {path:'/register',component:RegisterComponents},
         {name:"login",path:'/login',component:LoginComponents},
         {   path:'/shouye',
             component:ShouYe
         },
         {   path:'/zhihuiyading',
             component:ZhiHuiYaDing
+        },
+        {   
+            name:'OrderList',
+            path:'/orderlist/:id',
+            component:OrderList
         },
         {   path:'/buwangchuxin',
             component:BuWangChuXin
