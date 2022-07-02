@@ -4,7 +4,7 @@
         <span @click="getNavShow" id="icon" class="mui-icon mui-icon-bars"></span>
 		<div class="canvas" v-show="show">	
             <!-- 登录区 -->
-            <section class="login">
+            <section @click="goToMyCenter" class="login">
                 <div class="mui-card-header mui-card-media">
                     <img src="../images/logo.png" />
                     <div id="login-username" class="mui-media-body" ref="nickname">                        
@@ -299,8 +299,12 @@ var username
         methods: {
             // 退出登录事件
             logout() {
-            window.sessionStorage.clear()
-            this.$router.push('/login')
+                window.sessionStorage.clear()
+                this.$router.push('/login')
+            },
+            // 去个人中心页
+            goToMyCenter(){
+                this.$router.push('/mycenter')
             },
             //返回顶部事件
             backTop(){                

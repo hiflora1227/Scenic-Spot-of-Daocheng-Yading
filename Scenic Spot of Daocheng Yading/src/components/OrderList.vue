@@ -8,7 +8,7 @@
         <main>
             <!-- 信息地址栏 -->
             <section class="order-info">
-                <h2>{{orderList.title}}</h2>
+                <h2 ref="hotelname">{{orderList.title}}</h2>
                 <div class="hotel-tag">
                     <el-tag type="success">{{orderList.sign}}</el-tag>
                     <el-tag>有窗</el-tag>
@@ -17,15 +17,16 @@
                 <h5><i class="el-icon-position"></i>{{orderList.address}}</h5>
             </section>
             <!-- 入住时间 -->
-            <section class="time-picker">
-                <el-date-picker class="date-picker"
+            <section class="time-picker">                
+                <el-date-picker
                     v-model="value2"
-                    type="datetimerange"
-                    :picker-options="pickerOptions"
+                    type="daterange"
+                    align="right"
+                    unlink-panels
                     range-separator="——"
-                    start-placeholder="入住时间"
-                    end-placeholder="离店时间"
-                    align="right">
+                    start-placeholder="入住日期"
+                    end-placeholder="离店日期"
+                    :picker-options="pickerOptions">
                 </el-date-picker>
             </section>
             <div class="blank"></div> 
@@ -38,7 +39,7 @@
                 </div>
                 <div class="hotel-price">
                     <h4>￥479.0/晚</h4>
-                    <el-button type="danger" round>火热预定中</el-button>
+                    <el-button type="danger" round @click="goToBuy">火热预定中</el-button>
                 </div>
             </section> 
             <div class="blank blank-bottom"></div> 
@@ -60,16 +61,14 @@
                     </li>
                 </ul>
             </section>          
-        </main>
-        <!-- 为您推荐 -->        
-        
+        </main>     
         <!-- 底部tabbar-购买加购页面 -->
         <footer>
-            <el-button type="text" @click="open"><i class="el-icon-phone-outline phone"></i></el-button>
-            <!-- <i class="el-icon-phone-outline"></i> -->
+            <!-- <i class="el-icon-phone-outline phone"></i> -->
+            <i class="el-icon-phone-outline" @click="openP"></i>
             <i class="el-icon-shopping-cart-2"></i>
             <el-button class="chart" round>加入购物车</el-button>
-            <el-button class="buy" type="primary" round>立即抢购</el-button>
+            <el-button class="buy" type="primary" round @click="goToBuy">立即抢购</el-button>
         </footer>
     </div>
 </template>
@@ -77,13 +76,15 @@
 <script>
     export default {
         name:'OrderList',
+        components:{
+            // ActionSheet
+        },
         data() {
             return {
                 orderList:[],
                 selectList:[],
                 list:[],
                 pickerOptions: {
-                    // 日期选择器
                 shortcuts: [{
                     text: '最近一周',
                     onClick(picker) {
@@ -110,8 +111,9 @@
                     }
                 }]
                 },
-                value1: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
-                value2: ''
+                value1: '',
+                value2: '',
+                date:[]
             }
         },
         methods: {
@@ -128,10 +130,38 @@
                     console.log(err)
                 })                
             },
+             // 空白提示
+            open3() {
+                this.$message({
+                message: '请选择入住日期',
+                type: 'warning'
+                });
+            },
+            // 酒店预定
+            goToBuy(){
+                if (this.value2 == '') {
+                    this.open3()
+                }else{
+                    this.$router.push({name:'ConfirmList'})
+                    // 获取当前日期传值
+                    var date = new Date(this.value2[0])
+                    var y = date.getFullYear()
+                    var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1)
+                    var d = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate())
+                    this.date[0] = y+'-'+m+'-'+d
+                    date = new Date(this.value2[1])
+                    var y = date.getFullYear()
+                    var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1)
+                    var d = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate())
+                    this.date[1] = y+'-'+m+'-'+d
+                    this.$bus.$emit('date',this.date)
+                    console.log("这是value2",this.date)
+                }                
+            },
             // 电话提示框
-            open() {
-            this.$alert('(0836)2864548', '预订电话', {
-            confirmButtonText: '确定',
+            openP() {
+                this.$alert('(0836)2864548', '预订电话', {
+                    confirmButtonText: '确定',
                 });
             }
         },
@@ -263,9 +293,9 @@
             height: 80px;
             background-color: snow;
             box-shadow: 0px 0px 1px 1px #bfbfbf;
-            .phone{
-                margin-top:0;
-            }
+            // .phone{
+            //     margin-top:0;
+            // }
             i{
                 color: #F9BB34;
                 font-size: 40px;

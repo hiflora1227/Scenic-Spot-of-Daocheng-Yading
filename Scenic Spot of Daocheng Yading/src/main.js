@@ -14,6 +14,8 @@ import VueResource from 'vue-resource';
 // 引入axios
 import axios from 'axios'
 
+
+
 Vue.prototype.$http = axios // 将请求模块挂载到实例模型上
 
 
@@ -21,7 +23,8 @@ Vue.prototype.$http = axios // 将请求模块挂载到实例模型上
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 // 引入部分组件
-import { Button,Form,FormItem,Input,Message,Icon,Tag,DatePicker,MessageBox } from 'element-ui';
+import { Button,Form,FormItem,Input,Message,MessageBox,Icon,Tag,DatePicker
+,InputNumber,Avatar,Tabs,TabPane,Empty} from 'element-ui';
 // 使用部分组件
 Vue.use(Button)
 Vue.use(Form)
@@ -30,10 +33,19 @@ Vue.use(Input)
 Vue.use(Icon)
 Vue.use(Tag)
 Vue.use(DatePicker)
+Vue.use(InputNumber)
+
+Vue.use(Avatar)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Empty)
+
+
 Vue.use(MessageBox)
 Vue.use(Message)
-Vue.prototype.$message = MessageBox
+Vue.prototype.$message = Message
 Vue.prototype.$alert = MessageBox.alert
+Vue.prototype.$confirm = MessageBox.confirm
 // Vue.use(Select)
 
 //导入mint-ui组件库
@@ -55,6 +67,8 @@ Vue.use(MintUi)
 
 // 将element-ui安装到Vue中
 // Vue.use(ElementUI);
+
+
 
 Vue.prototype.mui = mui
 
